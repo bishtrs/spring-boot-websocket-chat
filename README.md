@@ -3,6 +3,7 @@
 ## 1. Project Overview 
 
 - A simple Spring Boot Websocket Chat Application
+- Used Websocket & STOMP for messaging.
 
 ## 2. Tech stack
 
@@ -27,47 +28,29 @@ mvn clean package
 mvn spring-boot:run<br/><br/>  
 
 ### 5. Testing  
+<br/>
 
-Below API Endpoints can be used for testing APIs using POSTMAN.</br></br>    
+Launch couple of chat windows, click on Join and then send some message. Note that message sent in one chat window
+will be visible in other chat window.
+<br/><br/>
 
--  POST API to create a user
+<img width="386" alt="image" src="https://github.com/user-attachments/assets/a513df82-239c-4822-8fee-2479b7fbe298" />
 
-   http://localhost:8080/api/v1/users  
+<br/><br/>
 
-   {  
-      "firstName":"John",  
-      "lastName":"Bocelli",  
-      "email":"john.bocelli@gmail.com"  
-   }    
-
-
--  GET API to get list of all users  
-
-   http://localhost:8080/api/v1/users  
-
--  GET API to get user by id
-
-   http://localhost:8080/api/v1/users/1  
-
--  PUT API to update user by id
-
-   http://localhost:8080/api/v1/users/1
-
-   {  
-      "firstName":"John",  
-      "lastName":"Bocelli",  
-      "email":"john.bocelli2@gmail.com"  
-   }    
+<img width="390" alt="image" src="https://github.com/user-attachments/assets/d97b8def-115c-4d11-81a4-c1cb8baa5483" />
 
 
--  DELETE API to delete a user by id
-
-   http://localhost:8080/api/v1/users/1  
 
 
-## 6. Folder structure
 
-<img width="224" alt="image" src="https://github.com/user-attachments/assets/73722432-c3e4-48f4-bb3e-129673ce79d8" />
+
+## 6. Code Explanation
+
+ChatController uses @MessageMapping annotation which makes sure any message sent to /chat calls greeting method which sends it back to
+/topic/chat subscribers.
+
+app.js subscribes to /topic/chat destination & also sends the message.using STOMP client. 
 
 
 
