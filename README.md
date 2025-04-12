@@ -3,15 +3,15 @@
 ## 1. Project Overview 
 
 - A simple Spring Boot Websocket Chat Application
-- Used Websocket & STOMP for messaging.
+- Used WebSocket & STOMP for messaging.
 
 ## 2. Tech stack
 
 - JDK 17  
 - Maven 4.0  
-- MYSQL 8.0  
 - Spring Boot 3.3.0  
 - Spring Websocket 6.1.8
+
 
 ## 3. Building and running the application
 
@@ -19,17 +19,17 @@
 
 git clone https://github.com/bishtrs/spring-boot-websocket-chat.git
 
-### 3) Building the application
+### 2) Build the application
 
 mvn clean package 
 
-### 4) Running the application
+### 3) Run the application
 
 mvn spring-boot:run<br/><br/>  
 
-### 5. Testing  
-<br/>
+## 4. Access the application  
 
+Open your browser and navigate to http://localhost:8080 (or the configured port).
 Launch couple of chat windows, click on Join and then send some message. Note that message sent in one chat window
 will be visible in other chat window.
 <br/><br/>
