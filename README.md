@@ -2,8 +2,8 @@
 
 ## 1. Project Overview 
 
-- A simple Spring Boot Websocket Chat Application
-- Used WebSocket & STOMP for messaging.
+- A Spring Bootbased Real-time chat using WebSocket and STOMP protocols.
+- Multi-user support with dynamic message broadcasting.
 
 ## 2. Tech stack
 
@@ -29,10 +29,10 @@ mvn spring-boot:run<br/><br/>
 
 ## 4. Access the application  
 
-Open your browser and navigate to http://localhost:8080 (or the configured port).
-Launch couple of chat windows, click on Join and then send some message. Note that message sent in one chat window
-will be visible in other chat window.
-<br/><br/>
+- Start the application and navigate to http://localhost:8080 (or the configured port).
+- Open two or more browser windows to simulate a chat session.
+- Click "Join" in each window to begin chatting.
+  <br/><br/>
 
 <img width="386" alt="image" src="https://github.com/user-attachments/assets/a513df82-239c-4822-8fee-2479b7fbe298" />
 
