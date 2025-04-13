@@ -11,9 +11,8 @@ import com.bisht.example.model.Chat;
 
 @Controller
 public class ChatController {
-	
-	private static final Logger logger = LoggerFactory.getLogger(ChatController.class);
 
+	private static final Logger logger = LoggerFactory.getLogger(ChatController.class);
 
 	@MessageMapping("/chat")
 	@SendTo("/topic/chat")
@@ -22,7 +21,7 @@ public class ChatController {
 			logger.error("Invalid chat data received");
 			throw new IllegalArgumentException("Invalid chat data received");
 		}
-        logger.info("Received chat message from {}: {}", chat.getUser(), chat.getMessage());
+		logger.info("Received chat message from {}: {}", chat.getUser(), chat.getMessage());
 		return chat;
 	}
 
