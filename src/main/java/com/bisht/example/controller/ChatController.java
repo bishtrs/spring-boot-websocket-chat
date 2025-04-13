@@ -13,6 +13,9 @@ public class ChatController {
 	@MessageMapping("/chat")
 	@SendTo("/topic/chat")
 	public Chat greeting(@Payload Chat chat) {
+		if (chat == null || chat.getMessage() == null || chat.getUser() == null) {
+			throw new IllegalArgumentException("Invalid chat data received");
+		}
 		return chat;
 	}
 
