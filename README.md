@@ -2,15 +2,16 @@
 
 ## 1. Project Overview 
 
-- A simple Spring Boot Websocket Chat Application
+- A Spring Boot based Real-time chat using WebSocket and STOMP protocols.
+- Multi-user support with dynamic message broadcasting.
 
 ## 2. Tech stack
 
 - JDK 17  
 - Maven 4.0  
-- MYSQL 8.0  
 - Spring Boot 3.3.0  
 - Spring Websocket 6.1.8
+
 
 ## 3. Building and running the application
 
@@ -18,56 +19,35 @@
 
 git clone https://github.com/bishtrs/spring-boot-websocket-chat.git
 
-### 3) Building the application
+### 2) Build the application
 
 mvn clean package 
 
-### 4) Running the application
+### 3) Run the application
 
-mvn spring-boot:run<br/><br/>  
+mvn spring-boot:run  
 
-### 5. Testing  
+## 4. Access the application  
 
-Below API Endpoints can be used for testing APIs using POSTMAN.</br></br>    
+- Start the application and navigate to http://localhost:8080 (or the configured port).
+- Open two or more browser windows to simulate a chat session.
+- Click "Join" in each window to begin chatting. <br/><br/>
+  
 
--  POST API to create a user
-
-   http://localhost:8080/api/v1/users  
-
-   {  
-      "firstName":"John",  
-      "lastName":"Bocelli",  
-      "email":"john.bocelli@gmail.com"  
-   }    
+<img width="386" alt="image" src="https://github.com/user-attachments/assets/a513df82-239c-4822-8fee-2479b7fbe298" />  \
+<img width="390" alt="image" src="https://github.com/user-attachments/assets/d97b8def-115c-4d11-81a4-c1cb8baa5483" />
 
 
--  GET API to get list of all users  
-
-   http://localhost:8080/api/v1/users  
-
--  GET API to get user by id
-
-   http://localhost:8080/api/v1/users/1  
-
--  PUT API to update user by id
-
-   http://localhost:8080/api/v1/users/1
-
-   {  
-      "firstName":"John",  
-      "lastName":"Bocelli",  
-      "email":"john.bocelli2@gmail.com"  
-   }    
 
 
--  DELETE API to delete a user by id
 
-   http://localhost:8080/api/v1/users/1  
+## 5. Code Explanation
 
+ChatController uses **@MessageMapping** annotation which makes sure any message sent to **/chat** calls greeting method which sends it back to
+**/topic/chat** subscribers.
 
-## 6. Folder structure
-
-<img width="224" alt="image" src="https://github.com/user-attachments/assets/73722432-c3e4-48f4-bb3e-129673ce79d8" />
+**app.js** subscribes to **/topic/chat** destination using **subscribe** method & sends the message using STOMP client **publish** call. 
+**app.js** **showChat** function will keep apppending the new chat message to display on chat window.
 
 
 
