@@ -44,9 +44,10 @@ mvn spring-boot:run
 ## 5. Code Explanation
 
 ChatController uses **@MessageMapping** annotation which makes sure any message sent to **/chat** calls greeting method which sends it back to
-**/topic/chat** subscribers.
+**/topic/chat** subscribers.  
 
-**app.js** subscribes to **/topic/chat** destination using **subscribe** method & sends the message using STOMP client **publish** call. 
+**app.js** subscribes to **/topic/chat** destination using **subscribe** method & sends the message using STOMP client **publish** call.  
+
 **app.js** **showChat** function will keep apppending the new chat message to display on chat window.
 
 
